@@ -243,6 +243,7 @@ void* gill_windsonic_read_loop(void* args)
             gillProcessFrame_WindSonic(frame, nbytes, ((Anemometer_Thread_Arguments_t*)args)->index);
         }
     }
+    return 0;
 }
 
 void* gill_windmaster_read_loop(void* args)
@@ -256,4 +257,5 @@ void* gill_windmaster_read_loop(void* args)
         if (nbytes > 0)
             gillProcessFrame_WindMaster(frame, nbytes, ((Anemometer_Thread_Arguments_t*)args)->index);
     }
+    return 0;
 }

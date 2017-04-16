@@ -7,7 +7,7 @@
  */
 #include "stdio.h"
 #include "FL/Fl.H"
-//#include "ui/UI.h" // control panel and GL view
+#include "ui/UI.h" // control panel and GL view
 #include "WR_config.h" // settings
 
 #include "serial_anemometers.h"
@@ -19,19 +19,19 @@
 int main(int argc, char **argv) 
 {
     /* initialize GS settings */
-    //GSRAO_Config_restore();
+    WR_Config_restore();
    
     /* initialize communication among threads */
-    //GSRAO_init_thread_comm();
+    //WR_init_thread_comm();
 
     // Create a window for the display of the experiment data
-    //UI ui(700, 500, "Ground Station of Robot Active Olfaction System");
+    UI ui(700, 500, "Ground Station of Robot Active Olfaction System");
     
     // Run
-    //Fl::run();
+    Fl::run();
 
     // save configs before closing
-    //GSRAO_Config_save();
+    WR_Config_save();
     std::string port[20]; 
     port[0] = "/dev/ttyUSB0";
     std::string type[20]; 

@@ -18,8 +18,10 @@
 
 int main(int argc, char **argv) 
 {
+    printf("start\n");
+
     /* initialize GS settings */
-    WR_Config_restore();
+    //WR_Config_restore();
    
     /* initialize communication among threads */
     //WR_init_thread_comm();
@@ -30,6 +32,7 @@ int main(int argc, char **argv)
     // Run
     Fl::run();
 
+    /*
     // save configs before closing
     WR_Config_save();
     std::string port[20]; 
@@ -40,7 +43,7 @@ int main(int argc, char **argv)
     printf("err = %d\n", err);
 
     for (;;);
-
+*/
     return 0;
 }
 
